@@ -50,4 +50,5 @@ Everything runs **100% locally** – no API keys, no cloud costs.
   ],
   "content": "How do I create a simple VI that adds two numbers?"
 
-##Enjoy your private, offline LabVIEW expert!
+
+#Enjoy your private, offline LabVIEW expert!
