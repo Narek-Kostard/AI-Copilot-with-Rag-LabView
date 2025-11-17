@@ -1,5 +1,5 @@
 chunk_size = 20 
-with open("output.txt", "r", encoding="utf-8") as f:
+with open("#Documentation", "r", encoding="utf-8") as f:
     lines = f.readlines()
 
 chunks = []
@@ -13,5 +13,6 @@ for i in range(0, len(lines), chunk_size):
 
 
 import json
-with open("labview_chunks.json", "w", encoding="utf-8") as f:
+with open("chunk-name.json", "w", encoding="utf-8") as f:
     json.dump(chunks, f, ensure_ascii=False, indent=2)
+
