@@ -9,7 +9,7 @@ from qdrant_client.models import PointStruct
 
 client = QdrantClient(url="http://localhost:6333")
 
-with open('labview_chunks.json', 'r', encoding='utf-8') as f:
+with open('file where are chunkes', 'r', encoding='utf-8') as f:
     chunks = json.load(f)
 embeddings = []
 for chunk in chunks:
@@ -28,4 +28,5 @@ for chunk in chunks:
             ),
         ],
     )
+
     
