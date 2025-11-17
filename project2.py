@@ -31,12 +31,11 @@ def main_logic(data):
     history = data["History"]
     user_input = data["content"]
 
-    # формируем историю для Ollama
-    history_with_context = history.copy()  # копируем историю
+    history_with_context = history.copy()
 
     if is_labview_related(user_input):
         context = get_context_from_qdrant(user_input)
-        history_with_context.insert(0, {  # вставляем system в начало
+        history_with_context.insert(0, {
             "role": "system",
             "content": f"Use the following context to answer:\n\n{context}"
         })
@@ -54,7 +53,6 @@ def main_logic(data):
     except Exception as e:
         assistant_response = f"Error communicating with Ollama: {str(e)}"
 
-    # добавляем ответ ассистента в историю
     history.append({"role": "assistant", "content": assistant_response})
 
     return json.dumps({"History": history}, ensure_ascii=False)
@@ -67,4 +65,5 @@ def Run_chat(input_json_string):
 
 if __name__ == "__main__":
     input_json = input()
+
     print(Run_chat(input_json))
